@@ -1,0 +1,1 @@
+"""User search application package."""

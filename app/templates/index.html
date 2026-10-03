@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Buscador interno de usuarios del backoffice">
+    <title>Buscador de usuarios</title>
+    <link rel="stylesheet" href="/static/styles.css?v=7">
+</head>
+<body>
+    <section class="hero" aria-labelledby="page-title">
+        <div>
+            <p class="eyebrow">Backoffice · Consulta interna</p>
+        </div>
+        <div>
+            <h1 id="page-title">Búsqueda de usuarios de la banca</h1>
+        </div>
+    </section>
+    <main class="page-shell">
+
+        <section class="search-panel" aria-labelledby="search-panel-title">
+            <section class="search-card" aria-labelledby="search-title">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">Nueva consulta</p>
+                        <h2 id="search-title">Buscar usuario</h2>
+                    </div>
+                    <span class="status-dot" aria-hidden="true"></span>
+                </div>
+    
+                <form id="search-form" novalidate>
+                    <div class="search-row">
+                        <div class="search-field">
+                            <label for="account-code">Código de cuenta</label>
+                            <input id="account-code" name="account_code" type="text" maxlength="30" autocomplete="off" placeholder="Ej. 32880">
+                        </div>
+                        <div class="search-field">
+                            <label for="identity-document">Cédula de identidad</label>
+                            <input id="identity-document" name="identity_document" type="text" maxlength="30" autocomplete="off" placeholder="Ej. 1234567">
+                        </div>
+                        <button id="search-button" type="submit">
+                            <span class="button-label">Buscar usuario</span>
+                            <span class="button-loader" aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <p class="field-help">Puede buscar por uno o ambos filtros.</p>
+                </form>
+    
+                <div id="feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+            </section>
+    
+            <section id="results-panel" class="results-panel" aria-labelledby="results-title" hidden>
+                <div class="results-heading">
+                    <div>
+                        <p class="section-kicker">Resultado de la consulta</p>
+                        <h2 id="results-title">Usuarios encontrados</h2>
+                    </div>
+                    <span id="result-count" class="result-count"></span>
+                </div>
+                <div id="results-list" class="results-list"></div>
+            </section>
+        </section>
+
+        <div class="note">
+            <p><span class="highlight">NOTA: </span>Para las búsquedas por <span class="highlight">código de cliente</span> en caso de no encontrar resultados, se recomienda agregar el numero <span class="highlight">10</span> al final del código y probar la búsqueda nuevamente de esta manera, en caso de no funcionar pruebe <span class="highlight">eliminando el último valor</span> al código de usuario original y realizar la búsqueda en caso de tampoco encontrar al usuario debe <span class="highlight">volver a buscar con el codigo original.</span></p>
+        </div>
+
+    </main>
+    <footer class="page-footer">
+        <span>Los datos se consultan en tiempo real</span>
+        <span aria-hidden="true">•</span>
+        <span>@ Cooperativa Comarapa RL. 2026</span>
+    </footer>
+    <script src="/static/app.js?v=7" defer></script>
+</body>
+</html>
